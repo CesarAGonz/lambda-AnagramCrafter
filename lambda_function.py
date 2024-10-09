@@ -5,7 +5,7 @@ def are_anagrams(string1, string2):
     clnd_strg2 = ''.join(sorted(string2.replace(" ", "").lower()))
     return clnd_strg1 == clnd_strg2
 
-def lambda_handler(event, context):
+def lambda_handler(event, _):
     org_strg1 = event.get('string1')
     org_strg2 = event.get('string2')
     
@@ -13,7 +13,8 @@ def lambda_handler(event, context):
         return {
             'statusCode': 400,
             'body': json.dumps({
-                'message': 'Both string1 and string2 must be provided and non-empty.'
+                'message': 'Both string1 and string2 must be provided and non-empty.', 
+                'eventReceived': event
             })
         }
     
