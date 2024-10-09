@@ -9,6 +9,14 @@ def lambda_handler(event, context):
     org_strg1 = event.get('string1', '')
     org_strg2 = event.get('string2', '')
     
+    if not org_strg1 or not org_strg2:
+        return {
+            'statusCode': 400,
+            'body': json.dumps({
+                'message': 'Both string1 and string2 must be non-empty.'
+            })
+        }
+    
     result = are_anagrams(org_strg1, org_strg2)
     
     return {
