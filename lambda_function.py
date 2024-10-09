@@ -15,8 +15,7 @@ def lambda_handler(event, _):
         return {
             'statusCode': 400,
             'body': json.dumps({
-                'message': 'Both string1 and string2 must be provided and non-empty.',
-                'eventReceived': event
+                'message': 'Both string1 and string2 must be provided and non-empty.'
             })
         }
     
