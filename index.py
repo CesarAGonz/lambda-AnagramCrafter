@@ -15,6 +15,6 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps({
             'areAnagrams': result,
-            'message': f"'{string1}' and '{string2}' are anagrams: {result}"
+            'message': f"'{string1}' and '{string2}' are anagrams?: {result}"
         })
     }
